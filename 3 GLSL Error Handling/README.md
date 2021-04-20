@@ -31,7 +31,7 @@ Where vShader is the vertex shader object that you've created in the last projec
 
 This function is used to log the error message if any reported by openGL.
 
-```
+```cpp
 void printShaderLog(GLuint shader) {
 	int len = 0;
 	int chWrittn = 0;
@@ -55,7 +55,7 @@ If you observe, we use the ```glGetShaderiv()``` function to query the length of
 
 This function is similar to the above function, but instead of shader objects, it is used to log the information of program objects.
 
-```
+```cpp
 void printProgramLog(GLuint program) {
 	int len = 0;
 	int chWrittn = 0;
@@ -75,7 +75,7 @@ void printProgramLog(GLuint program) {
 
 This function is usedful for detecting GLSL compilation errors and OpenGL runtime errors.
 
-```
+```cpp
 bool checkOpenGLError() {
 	bool foundError = false;
 	int glErr = glGetError();
