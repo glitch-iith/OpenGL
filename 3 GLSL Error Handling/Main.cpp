@@ -8,44 +8,50 @@ GLuint renderingProgram;
 GLuint vao[numVAOs];
 double size = 0;
 
-void printShaderLog(GLuint shader) {
-	int len = 0;
-	int chWrittn = 0;
-	char *log;
-	glGetShaderiv(shader, GL_INFO_LOG_LENGTH, &len);
-	if (len > 0) {
-		log = (char*)malloc(len);
-		glGetShaderInfoLog(shader, len, &chWrittn, log);
-		std::cout << "Shader info log: " << log << std::endl;
-		free(log);
-	}
-	return;
-}
 
-void printProgramLog(GLuint program) {
-	int len = 0;
-	int chWrittn = 0;
-	char* log;
-	glGetProgramiv(program, GL_INFO_LOG_LENGTH, &len);
-	if (len > 0) {
-		log = (char*)malloc(len);
-		glGetProgramInfoLog(program, len, &chWrittn, log);
-		std::cout << "Program info log: " << log << std::endl;
-		free(log);
-	}
-	return;
-}
-
-bool checkOpenGLError() {
-	bool foundError = false;
-	int glErr = glGetError();
-	while (glErr != GL_NO_ERROR) {
-		std::cout<< "glError: " << glErr << std::endl;
-		foundError = true;
-		glErr = glGetError();
-	}
-	return foundError;
-}
+// NEW LINES
+/////////////////////////////////////////////////////////////////////////////
+																		  ///
+void printShaderLog(GLuint shader) {									  ///
+	int len = 0;														  ///
+	int chWrittn = 0;													  ///
+	char *log;															  ///
+	glGetShaderiv(shader, GL_INFO_LOG_LENGTH, &len);					  ///
+	if (len > 0) {														  ///
+		log = (char*)malloc(len);										  ///
+		glGetShaderInfoLog(shader, len, &chWrittn, log);				  ///
+		std::cout << "Shader info log: " << log << std::endl;			  ///
+		free(log);														  ///
+	}																	  ///
+	return;																  ///
+}																		  ///
+																		  ///
+void printProgramLog(GLuint program) {									  ///
+	int len = 0;														  ///
+	int chWrittn = 0;													  ///
+	char* log;															  ///
+	glGetProgramiv(program, GL_INFO_LOG_LENGTH, &len);					  ///
+	if (len > 0) {														  ///
+		log = (char*)malloc(len);										  ///
+		glGetProgramInfoLog(program, len, &chWrittn, log);				  ///
+		std::cout << "Program info log: " << log << std::endl;			  ///
+		free(log);														  ///
+	}																	  ///
+	return;																  ///
+}																		  ///
+																		  ///
+bool checkOpenGLError() {												  ///
+	bool foundError = false;											  ///
+	int glErr = glGetError();											  ///
+	while (glErr != GL_NO_ERROR) {										  ///
+		std::cout<< "glError: " << glErr << std::endl;					  ///
+		foundError = true;												  ///
+		glErr = glGetError();											  ///
+	}																	  ///
+	return foundError;													  ///
+}																		  ///
+																		  ///
+/////////////////////////////////////////////////////////////////////////////
 
 GLuint createShaderProgram(GLFWwindow* window) {
 	const char* vShaderSource =
@@ -67,35 +73,43 @@ GLuint createShaderProgram(GLFWwindow* window) {
 	glShaderSource(vShader, 1, &vShaderSource, NULL);
 	glShaderSource(fShader, 1, &fShaderSource, NULL);
 
-	GLint vertCompiled, fragCompiled, linked;
 
 	glCompileShader(vShader);
-	checkOpenGLError();
-	glGetShaderiv(vShader, GL_COMPILE_STATUS, &vertCompiled);
-	if (vertCompiled != 1) {
-		std::cout << "Vertex shader compilation failed.." << std::endl;
-		printShaderLog(vShader);
-	}
+	//////////////////////////////////////////////////////////////////////////////
+	checkOpenGLError();														   ///
+	GLint vertCompiled;														   ///
+	glGetShaderiv(vShader, GL_COMPILE_STATUS, &vertCompiled);				   ///
+	if (vertCompiled != 1) {												   ///	NEW LINES
+		std::cout << "Vertex shader compilation failed.." << std::endl;		   ///
+		printShaderLog(vShader);											   ///
+	}																		   ///
+	//////////////////////////////////////////////////////////////////////////////
 
 	glCompileShader(fShader);
-	checkOpenGLError();
-	glGetShaderiv(fShader, GL_COMPILE_STATUS, &fragCompiled);
-	if (fragCompiled != 1) {
-		std::cout << "Fragment shader compilation failed.. " << std::endl;
-		printShaderLog(fShader);
-	}
+	//////////////////////////////////////////////////////////////////////////////
+	checkOpenGLError();														   ///
+	GLint fragCompiled;														   ///
+	glGetShaderiv(fShader, GL_COMPILE_STATUS, &fragCompiled);				   ///
+	if (fragCompiled != 1) {												   ///   NEW LINES
+		std::cout << "Fragment shader compilation failed.. " << std::endl;	   ///
+		printShaderLog(fShader);											   ///
+	}																		   ///
+	//////////////////////////////////////////////////////////////////////////////
 
-	GLuint vfProgram = glCreateProgram();
+	GLint vfProgram = glCreateProgram();
 	glAttachShader(vfProgram, vShader);
 	glAttachShader(vfProgram, fShader);
 
 	glLinkProgram(vfProgram);
-	checkOpenGLError();
-	glGetProgramiv(vfProgram, GL_LINK_STATUS, &linked);
-	if (linked != 1) {
-		std::cout << "Linking Failed.." << std::endl;
-		printProgramLog(vfProgram);
-	}
+	///////////////////////////////////////////////////////////////////////////////
+	checkOpenGLError();															///
+	GLint linked;																///
+	glGetProgramiv(vfProgram, GL_LINK_STATUS, &linked);							///
+	if (linked != 1) {															///   NEW LINES
+		std::cout << "Linking Failed.." << std::endl;							///
+		printProgramLog(vfProgram);												///
+	}																			///
+	///////////////////////////////////////////////////////////////////////////////
 	return vfProgram;
 }
 
