@@ -51,7 +51,7 @@ If you observe, we use the ```glGetShaderiv()``` function to query the length of
 
 [```glGetShaderInfoLog()```](https://docs.gl/gl4/glGetShaderInfoLog) is another function which is used to get the information log for a specified shader object.
 
-### 3.2 ```printProgramiv()```
+### 3.2 ```printProgramLog()```
 
 This function is similar to the above function, but instead of shader objects, it is used to log the information of program objects.
 
