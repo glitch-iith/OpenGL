@@ -8,3 +8,10 @@ Due to the above complications, we create some modules for catching and displayi
 
 ## How do we do it?
 OpenGL provides us functions which allow us to get information about the compiled GLSL shaders and programs. 2 of them are ```glGetShaderiv()``` and ```glGetProgramiv()```.
+
+### We create 3 functions/modules to log the GLSL errors:
+```
+1. printShaderLog()
+2. printProgramLog()
+3. checkOpenGLError()
+```
