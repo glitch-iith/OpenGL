@@ -25,7 +25,9 @@ glGetShaderiv(vShader, GL_COMPILE_STATUS, &vertex_compiled);
 
 Where vShader is the vertex shader object that you've created in the last project, and vertex_compiled is a parameter of type ```GLuint``` whose value is set by this function call. If the last shader compilation was successful, then it is set to true.
 
-## 3. We define three functions/modules in this project to log the GLSL errors:
+## 3. Writing the code!
+
+Create a clone of your previous project and define the following three functions in your cpp file.
 
 ### 3.1 ```printShaderLog()```
 
