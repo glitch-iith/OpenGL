@@ -9,48 +9,49 @@ GLuint vao[numVAOs];
 double size = 0;
 
 
-// NEW LINES
+// NEW CODE BLOCK 1
 /////////////////////////////////////////////////////////////////////////////
-																		  ///
-void printShaderLog(GLuint shader) {									  ///
-	int len = 0;														  ///
-	int chWrittn = 0;													  ///
-	char *log;															  ///
-	glGetShaderiv(shader, GL_INFO_LOG_LENGTH, &len);					  ///
-	if (len > 0) {														  ///
-		log = (char*)malloc(len);										  ///
-		glGetShaderInfoLog(shader, len, &chWrittn, log);				  ///
-		std::cout << "Shader info log: " << log << std::endl;			  ///
-		free(log);														  ///
-	}																	  ///
-	return;																  ///
-}																		  ///
-																		  ///
-void printProgramLog(GLuint program) {									  ///
-	int len = 0;														  ///
-	int chWrittn = 0;													  ///
-	char* log;															  ///
-	glGetProgramiv(program, GL_INFO_LOG_LENGTH, &len);					  ///
-	if (len > 0) {														  ///
-		log = (char*)malloc(len);										  ///
-		glGetProgramInfoLog(program, len, &chWrittn, log);				  ///
-		std::cout << "Program info log: " << log << std::endl;			  ///
-		free(log);														  ///
-	}																	  ///
-	return;																  ///
-}																		  ///
-																		  ///
-bool checkOpenGLError() {												  ///
-	bool foundError = false;											  ///
-	int glErr = glGetError();											  ///
-	while (glErr != GL_NO_ERROR) {										  ///
-		std::cout<< "glError: " << glErr << std::endl;					  ///
-		foundError = true;												  ///
-		glErr = glGetError();											  ///
-	}																	  ///
-	return foundError;													  ///
-}																		  ///
-																		  ///
+																		  
+void printShaderLog(GLuint shader) {									  
+	int len = 0;														  
+	int chWrittn = 0;													  
+	char *log;															  
+	glGetShaderiv(shader, GL_INFO_LOG_LENGTH, &len);					  
+	if (len > 0) {														  
+		log = (char*)malloc(len);										  
+		glGetShaderInfoLog(shader, len, &chWrittn, log);				  
+		std::cout << "Shader info log: " << log << std::endl;			  
+		free(log);														  
+	}																	  
+	return;																  
+}																		  
+																		  
+void printProgramLog(GLuint program) {									  
+	int len = 0;														  
+	int chWrittn = 0;													  
+	char* log;															  
+	glGetProgramiv(program, GL_INFO_LOG_LENGTH, &len);					  
+	if (len > 0) {														  
+		log = (char*)malloc(len);										  
+		glGetProgramInfoLog(program, len, &chWrittn, log);				  
+		std::cout << "Program info log: " << log << std::endl;			  
+		free(log);														  
+	}																	  
+	return;																  
+}																		  
+																		  
+bool checkOpenGLError() {												  
+	bool foundError = false;											  
+	int glErr = glGetError();											  
+	while (glErr != GL_NO_ERROR) {										  
+		std::cout<< "glError: " << glErr << std::endl;					  
+		foundError = true;												  
+		glErr = glGetError();											  
+	}																	  
+	return foundError;													  
+}																		  
+
+// END OF NEW CODE BLOCK 1
 /////////////////////////////////////////////////////////////////////////////
 
 GLuint createShaderProgram(GLFWwindow* window) {
@@ -75,25 +76,31 @@ GLuint createShaderProgram(GLFWwindow* window) {
 
 
 	glCompileShader(vShader);
+
+	// NEW CODE BLOCK 2
 	//////////////////////////////////////////////////////////////////////////////
-	checkOpenGLError();														   ///
-	GLint vertCompiled;														   ///
-	glGetShaderiv(vShader, GL_COMPILE_STATUS, &vertCompiled);				   ///
-	if (vertCompiled != 1) {												   ///	NEW LINES
-		std::cout << "Vertex shader compilation failed.." << std::endl;		   ///
-		printShaderLog(vShader);											   ///
-	}																		   ///
+	checkOpenGLError();														   
+	GLint vertCompiled;														   
+	glGetShaderiv(vShader, GL_COMPILE_STATUS, &vertCompiled);				   
+	if (vertCompiled != 1) {												   
+		std::cout << "Vertex shader compilation failed.." << std::endl;		   
+		printShaderLog(vShader);											   
+	}	
+	// END OF NEW CODE BLOCK 2
 	//////////////////////////////////////////////////////////////////////////////
 
 	glCompileShader(fShader);
+
+	// NEW CODE BLOCK 3
 	//////////////////////////////////////////////////////////////////////////////
-	checkOpenGLError();														   ///
-	GLint fragCompiled;														   ///
-	glGetShaderiv(fShader, GL_COMPILE_STATUS, &fragCompiled);				   ///
-	if (fragCompiled != 1) {												   ///   NEW LINES
-		std::cout << "Fragment shader compilation failed.. " << std::endl;	   ///
-		printShaderLog(fShader);											   ///
-	}																		   ///
+	checkOpenGLError();														   
+	GLint fragCompiled;														   
+	glGetShaderiv(fShader, GL_COMPILE_STATUS, &fragCompiled);				   
+	if (fragCompiled != 1) {												   
+		std::cout << "Fragment shader compilation failed.. " << std::endl;	   
+		printShaderLog(fShader);											   
+	}				
+	// END OF NEW CODE BLOCK 3
 	//////////////////////////////////////////////////////////////////////////////
 
 	GLint vfProgram = glCreateProgram();
@@ -101,14 +108,17 @@ GLuint createShaderProgram(GLFWwindow* window) {
 	glAttachShader(vfProgram, fShader);
 
 	glLinkProgram(vfProgram);
+
+	// NEW CODE BLOCK 4
 	///////////////////////////////////////////////////////////////////////////////
-	checkOpenGLError();															///
-	GLint linked;																///
-	glGetProgramiv(vfProgram, GL_LINK_STATUS, &linked);							///
-	if (linked != 1) {															///   NEW LINES
-		std::cout << "Linking Failed.." << std::endl;							///
-		printProgramLog(vfProgram);												///
-	}																			///
+	checkOpenGLError();															
+	GLint linked;																
+	glGetProgramiv(vfProgram, GL_LINK_STATUS, &linked);							
+	if (linked != 1) {															
+		std::cout << "Linking Failed.." << std::endl;							
+		printProgramLog(vfProgram);												
+	}					
+	// END OF NEW CODE BLOCK 4
 	///////////////////////////////////////////////////////////////////////////////
 	return vfProgram;
 }
