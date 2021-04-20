@@ -15,7 +15,7 @@ For a shader object, the following parameters are available:
 2. GL_COMPILE_STATUS
 3. GL_INFO_LOG_LENGTH
 4. GL_SHADER_SOURCE_LENGTH
-5. 
+
 For example, if we call the function with the 2nd parameter listed above for a vertex shader, it would look like this:
 ```
 glGetShaderiv(vShader, GL_COMPILE_STATUS, &vertex_compiled);
