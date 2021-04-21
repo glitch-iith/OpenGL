@@ -18,7 +18,7 @@ In addition to the above 2 libraries, we also use another library ```opengl32.li
 
 ## Step 1: Create a visual studio project
 1. Open Visual Studio and select ```Create a new project```
-2. Select "Console App" and click ```Next```
+2. Select ```Console App``` and click ```Next```
 3. Fill the boxes as below:
    - Project name: ```1 Getting Started```
    - Directory: ```C:\Src```
