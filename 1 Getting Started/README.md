@@ -33,9 +33,23 @@ If you've succesfully created a project, then your screen should look like this:
 This part of the tutorial is very important. Even minor mistakes in linking libraries will lead to build failure. Be mindful for the next few minutes :)
 
 1. Press ```Alt + F7``` to open the property pages of the current project (i.e. 1 Getting Started)
-2. In the property window, at the top you'll see 2 dropdowns. One for configuration and other for platform. For configuration, select ```All Configurations``` and for platform select ```x64```. Click apply.
+
+2. In the property window, at the top you'll see 2 dropdowns. One for configuration and other for platform.
+
+3. For configuration, select ```All Configurations``` and for platform, select ```x64```. Click apply.
+
 ![c++ general](https://raw.githubusercontent.com/sachingodishela/resources/main/cpp%20general.PNG)
-4. In the left pane, navigate to ```Configuration Properties > C/C++ > General```. In the additional include directories, fill this: ```C:\Src\GLFW\include; C:\Src\GLEW\include```
+
+4. In the left pane, navigate to ```Configuration Properties > C/C++ > General```.
+
+5. In the additional include directories, fill this: ```C:\Src\GLFW\include; C:\Src\GLEW\include```
+
 ![linker general](https://raw.githubusercontent.com/sachingodishela/resources/main/linker%20general.PNG)
-6. In the left pane, navigate to ```Configuration Properties > Linker > General```. In the additional dependencies, add this at the beginning: ```opengl32.lib;glew32.lib;glfw3.lib;``` 
+
+6. In the left pane, navigate to ```Configuration Properties > Linker > General```.
+
+7. In the additional dependencies, add this at the beginning: ```opengl32.lib;glew32.lib;glfw3.lib;``` 
+
 ![linker input](https://raw.githubusercontent.com/sachingodishela/resources/main/linker%20input.PNG)
+
+Click apply and close the properties window.
