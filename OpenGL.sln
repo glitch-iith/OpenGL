@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31129.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "1 Initialize an instance", "1 Initialize an instance\1 Initialize an instance.vcxproj", "{C0FC879E-463B-4166-8B56-3C94E4F3A907}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "1 Getting Started", "1 Getting Started\1 Getting Started.vcxproj", "{C0FC879E-463B-4166-8B56-3C94E4F3A907}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "2 Vertex and Fragment Shaders", "2 Vertex and Fragment Shaders\2 Vertex and Fragment Shaders.vcxproj", "{9BC6652A-0060-4217-89BB-2AB769BFD5F5}"
 EndProject
