@@ -38,17 +38,21 @@ This part of the tutorial is very important. Even minor mistakes in linking libr
 
 3. For configuration, select ```All Configurations``` and for platform, select ```x64```. Click apply.
 
-![c++ general](https://raw.githubusercontent.com/sachingodishela/resources/main/cpp%20general.PNG)
-
 4. In the left pane, navigate to ```Configuration Properties > C/C++ > General```.
 
-5. In the additional include directories, fill this: ```C:\Src\GLFW\include; C:\Src\GLEW\include```
+5. In the additional include directories, fill this: ```C:\Src\GLFW\include; C:\Src\GLEW\include```. (See below image)
 
-![linker general](https://raw.githubusercontent.com/sachingodishela/resources/main/linker%20general.PNG)
+![c++ general](https://raw.githubusercontent.com/sachingodishela/resources/main/cpp%20general.PNG)
 
 6. In the left pane, navigate to ```Configuration Properties > Linker > General```.
 
-7. In the additional dependencies, add this at the beginning: ```opengl32.lib;glew32.lib;glfw3.lib;``` 
+7. In the additional library directories, fill this: ```C:\Src\GLFW\lib; C:\Src\GLEW\lib\Release\x64```. (See below image)
+
+![linker general](https://raw.githubusercontent.com/sachingodishela/resources/main/linker%20general.PNG)
+
+8. In the left pane, navigate to ```Configuration Properties > Linker > Input```.
+
+9. In the additional dependencies, add this at the beginning: ```opengl32.lib;glew32.lib;glfw3.lib;``` 
 
 ![linker input](https://raw.githubusercontent.com/sachingodishela/resources/main/linker%20input.PNG)
 
