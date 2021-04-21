@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Initializing and Setting Up.cpp">
+    <ClCompile Include="Getting Started.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
