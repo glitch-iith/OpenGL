@@ -17,9 +17,10 @@ These are nothing but the external libraries that I've talked about. So, why are
 In addition to the above 2 libraries, we also use another library ```opengl32.lib``` which is available by default with your graphics drivers, so we need not worry about configuring that.
 
 ## Step 1: Create a visual studio project
-1. Open Visual Studio and select "Create a new project"
-2. Select "Console App" and proceed
-3. a. Project name: ```1 Getting Started```
+1. Open Visual Studio and select ```Create a new project```
+2. Select "Console App" and click ```Next```
+3.
+   a. Project name: ```1 Getting Started```
    b. Directory: ```C:\Src```
    c. Solution name: ```OpenGL```
 4. Do not check "Place solution and project in the same directory"
