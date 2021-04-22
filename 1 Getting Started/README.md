@@ -27,6 +27,7 @@ In addition to the above 2 libraries, we also use another library ```opengl32.li
 5. Click ```Create```.
 
 If you've succesfully created a project, then your screen should look like this:
+
 ![Project Creation](https://raw.githubusercontent.com/sachingodishela/resources/main/1.PNG)
 
 ## Step 2: Linking the libraries
