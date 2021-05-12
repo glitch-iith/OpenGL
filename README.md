@@ -11,7 +11,7 @@ Follow the below steps to make your windows machine ready for openGL programming
 1. Update your display and graphics drivers.
 2. Install Visual Studio 2019 Community.
 3. In VS2019, install "Desktop Development with C++" workload.
-4. Download and extract [this](https://mega.nz/file/Po410awR#iJ1ITLiXjCIXJnXSPRMtWffl9uPs_5J1Amg34n2bKQ0) zif file in ```C:\```. Your directory should look like this: ```C:\Src\```.
+4. Download and extract [this](https://mega.nz/file/Po410awR#iJ1ITLiXjCIXJnXSPRMtWffl9uPs_5J1Amg34n2bKQ0) zip file in ```C:\```. Your directory should look like this: ```C:\Src\```.
 5. Now copy the 3 files present in ```C:\Src\GLEW\bin\Release\x64``` and navigate to ```C:\Windows\System32\``` and paste.
 6. You're good to go! Clone this repository to follow along.
 
