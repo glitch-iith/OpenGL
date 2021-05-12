@@ -64,8 +64,7 @@ GLuint createShaderProgram(GLFWwindow* window) {
 		"#version 430 \n"
 		"out vec4 color;"
 		"void main(void) { \n"
-		"	if(gl_FragCoord.x > 300) color = vec4(1.0, 1.0, 1.0, 0.0); \n"
-		"   else color = vec4(0.0, 0.0, 0.0, 0.0);"
+		"color = vec4(1.0, 1.0, 1.0, 0.0);"
 		"}";
 
 	GLuint vShader = glCreateShader(GL_VERTEX_SHADER);
