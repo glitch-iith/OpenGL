@@ -9,6 +9,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "2 Vertex and Fragment Shade
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "3 GLSL Error Handling", "3 GLSL Error Handling\3 GLSL Error Handling.vcxproj", "{D81A0F1D-4D7E-443C-96AD-A7B1C923D1AA}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "4 Using External Shader Files", "4 Using External Shader Files\4 Using External Shader Files.vcxproj", "{90051B38-F27A-49C5-BAE8-6E2AC51993BB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -41,6 +43,14 @@ Global
 		{D81A0F1D-4D7E-443C-96AD-A7B1C923D1AA}.Release|x64.Build.0 = Release|x64
 		{D81A0F1D-4D7E-443C-96AD-A7B1C923D1AA}.Release|x86.ActiveCfg = Release|Win32
 		{D81A0F1D-4D7E-443C-96AD-A7B1C923D1AA}.Release|x86.Build.0 = Release|Win32
+		{90051B38-F27A-49C5-BAE8-6E2AC51993BB}.Debug|x64.ActiveCfg = Debug|x64
+		{90051B38-F27A-49C5-BAE8-6E2AC51993BB}.Debug|x64.Build.0 = Debug|x64
+		{90051B38-F27A-49C5-BAE8-6E2AC51993BB}.Debug|x86.ActiveCfg = Debug|Win32
+		{90051B38-F27A-49C5-BAE8-6E2AC51993BB}.Debug|x86.Build.0 = Debug|Win32
+		{90051B38-F27A-49C5-BAE8-6E2AC51993BB}.Release|x64.ActiveCfg = Release|x64
+		{90051B38-F27A-49C5-BAE8-6E2AC51993BB}.Release|x64.Build.0 = Release|x64
+		{90051B38-F27A-49C5-BAE8-6E2AC51993BB}.Release|x86.ActiveCfg = Release|Win32
+		{90051B38-F27A-49C5-BAE8-6E2AC51993BB}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
