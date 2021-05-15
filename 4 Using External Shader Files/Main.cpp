@@ -1,6 +1,8 @@
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 #include <iostream>
+#include <fstream>
+#include <iterator>
 #include <math.h>
 
 #define numVAOs 1
@@ -9,9 +11,7 @@ GLuint vao[numVAOs];
 double size = 0;
 
 
-// NEW CODE BLOCK 1
-/////////////////////////////////////////////////////////////////////////////
-																		  
+																  
 void printShaderLog(GLuint shader) {									  
 	int len = 0;														  
 	int chWrittn = 0;													  
@@ -51,24 +51,23 @@ bool checkOpenGLError() {
 	return foundError;													  
 }																		  
 
-// END OF NEW CODE BLOCK 1
-/////////////////////////////////////////////////////////////////////////////
+std::string readShaderSource(const char* FILENAME) {
+	std::ifstream ifs(FILENAME);
+	std::string content((std::istreambuf_iterator<char>(ifs)), (std::istreambuf_iterator<char>()));
+	return content;
+}
 
 GLuint createShaderProgram(GLFWwindow* window) {
-	const char* vShaderSource =
-		"#version 430 \n"
-		"void main(void) \n"
-		"{gl_Position = vec4(0,0,0,1);}";
-
-	const char* fShaderSource =
-		"#version 430 \n"
-		"out vec4 color;"
-		"void main(void) { \n"
-		"color = vec4(1.0, 1.0, 1.0, 0.0);"
-		"}";
-
+	
 	GLuint vShader = glCreateShader(GL_VERTEX_SHADER);
 	GLuint fShader = glCreateShader(GL_FRAGMENT_SHADER);
+
+	std::string vertShaderStr = readShaderSource("vertShader.glsl");
+	std::string fragShaderStr = readShaderSource("fragShader.glsl");
+
+	const char* vShaderSource = vertShaderStr.c_str();
+	const char* fShaderSource = fragShaderStr.c_str();
+
 
 	glShaderSource(vShader, 1, &vShaderSource, NULL);
 	glShaderSource(fShader, 1, &fShaderSource, NULL);
@@ -76,8 +75,6 @@ GLuint createShaderProgram(GLFWwindow* window) {
 
 	glCompileShader(vShader);
 
-	// NEW CODE BLOCK 2
-	//////////////////////////////////////////////////////////////////////////////
 	checkOpenGLError();														   
 	GLint vertCompiled;														   
 	glGetShaderiv(vShader, GL_COMPILE_STATUS, &vertCompiled);				   
@@ -85,13 +82,9 @@ GLuint createShaderProgram(GLFWwindow* window) {
 		std::cout << "Vertex shader compilation failed.." << std::endl;		   
 		printShaderLog(vShader);											   
 	}	
-	// END OF NEW CODE BLOCK 2
-	//////////////////////////////////////////////////////////////////////////////
 
 	glCompileShader(fShader);
 
-	// NEW CODE BLOCK 3
-	//////////////////////////////////////////////////////////////////////////////
 	checkOpenGLError();														   
 	GLint fragCompiled;														   
 	glGetShaderiv(fShader, GL_COMPILE_STATUS, &fragCompiled);				   
@@ -99,8 +92,6 @@ GLuint createShaderProgram(GLFWwindow* window) {
 		std::cout << "Fragment shader compilation failed.. " << std::endl;	   
 		printShaderLog(fShader);											   
 	}				
-	// END OF NEW CODE BLOCK 3
-	//////////////////////////////////////////////////////////////////////////////
 
 	GLint vfProgram = glCreateProgram();
 	glAttachShader(vfProgram, vShader);
@@ -108,17 +99,13 @@ GLuint createShaderProgram(GLFWwindow* window) {
 
 	glLinkProgram(vfProgram);
 
-	// NEW CODE BLOCK 4
-	///////////////////////////////////////////////////////////////////////////////
 	checkOpenGLError();															
 	GLint linked;																
 	glGetProgramiv(vfProgram, GL_LINK_STATUS, &linked);							
 	if (linked != 1) {															
 		std::cout << "Linking Failed.." << std::endl;							
 		printProgramLog(vfProgram);												
-	}					
-	// END OF NEW CODE BLOCK 4
-	///////////////////////////////////////////////////////////////////////////////
+	}
 	return vfProgram;
 }
 

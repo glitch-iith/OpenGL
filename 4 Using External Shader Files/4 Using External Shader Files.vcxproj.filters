@@ -23,5 +23,11 @@
     <None Include="README.md">
       <Filter>Source Files</Filter>
     </None>
+    <None Include="vertShader.glsl">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="fragShader.glsl">
+      <Filter>Source Files</Filter>
+    </None>
   </ItemGroup>
 </Project>
