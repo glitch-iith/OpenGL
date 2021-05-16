@@ -11,6 +11,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "3 GLSL Error Handling", "3 
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "4 Using External Shader Files", "4 Using External Shader Files\4 Using External Shader Files.vcxproj", "{90051B38-F27A-49C5-BAE8-6E2AC51993BB}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "5 Drawing a Traingle", "5 Drawing a Traingle\5 Drawing a Traingle.vcxproj", "{2372648C-2E3F-4411-B324-6DF4C0B75DC8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -51,6 +53,14 @@ Global
 		{90051B38-F27A-49C5-BAE8-6E2AC51993BB}.Release|x64.Build.0 = Release|x64
 		{90051B38-F27A-49C5-BAE8-6E2AC51993BB}.Release|x86.ActiveCfg = Release|Win32
 		{90051B38-F27A-49C5-BAE8-6E2AC51993BB}.Release|x86.Build.0 = Release|Win32
+		{2372648C-2E3F-4411-B324-6DF4C0B75DC8}.Debug|x64.ActiveCfg = Debug|x64
+		{2372648C-2E3F-4411-B324-6DF4C0B75DC8}.Debug|x64.Build.0 = Debug|x64
+		{2372648C-2E3F-4411-B324-6DF4C0B75DC8}.Debug|x86.ActiveCfg = Debug|Win32
+		{2372648C-2E3F-4411-B324-6DF4C0B75DC8}.Debug|x86.Build.0 = Debug|Win32
+		{2372648C-2E3F-4411-B324-6DF4C0B75DC8}.Release|x64.ActiveCfg = Release|x64
+		{2372648C-2E3F-4411-B324-6DF4C0B75DC8}.Release|x64.Build.0 = Release|x64
+		{2372648C-2E3F-4411-B324-6DF4C0B75DC8}.Release|x86.ActiveCfg = Release|Win32
+		{2372648C-2E3F-4411-B324-6DF4C0B75DC8}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

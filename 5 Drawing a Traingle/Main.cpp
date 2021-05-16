@@ -8,7 +8,7 @@
 #define numVAOs 1
 GLuint renderingProgram;
 GLuint vao[numVAOs];
-double size = 0;
+double pointSize = 1;
 
 
 																  
@@ -122,15 +122,9 @@ void display(GLFWwindow* window) {
 	glClearColor(r, g, b, 1.0);
 	glClear(GL_COLOR_BUFFER_BIT);
 	glUseProgram(renderingProgram);
-	bool flag;
-	size++;
-	double x = abs(255/** sin((3*size/100.0))*/ * cos((5 * size / 100.0)));
-	GLint pointsize;
-	glGetIntegerv(GL_POINT_SIZE, &pointsize);
-	//std::cout << pointsize << std::endl;
 	glEnable(GL_PROGRAM_POINT_SIZE);
-	glPointSize(x);
-	glDrawArrays(GL_POINTS, 0, 1);
+	glPointSize(pointSize);
+	glDrawArrays(GL_TRIANGLES, 0, 3);
 }
 
 int main()
