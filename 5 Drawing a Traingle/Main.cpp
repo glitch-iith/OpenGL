@@ -118,13 +118,11 @@ void init(GLFWwindow* window) {
 
 // display loop
 void display(GLFWwindow* window) {
-	float r = 0.08, g = r * 2, b = g * 1.5;
+	float r = 0.09, g = r * 2, b = g * 1.5;
 	glClearColor(r, g, b, 1.0);
 	glClear(GL_COLOR_BUFFER_BIT);
 	glUseProgram(renderingProgram);
-	glEnable(GL_PROGRAM_POINT_SIZE);
-	glPointSize(pointSize);
-	glDrawArrays(GL_TRIANGLES, 0, 3);
+	glDrawArrays(GL_TRIANGLES, 0, 4);
 }
 
 int main()
