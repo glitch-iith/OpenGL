@@ -1,3 +1,3 @@
-# Using External Shader Files
+# Drawing a Triangle
 
-As our programs' complexity increases, it is a good practice to use separate files for shaders and c++ source code.
+So far, we've dealt with drawing just a point. In this project, we'll learn how to draw a triangle.
