@@ -69,10 +69,8 @@ GLuint createShaderProgram(GLFWwindow* window) {
 	const char* vShaderSource = vertShaderStr.c_str();
 	const char* fShaderSource = fragShaderStr.c_str();
 
-
 	glShaderSource(vShader, 1, &vShaderSource, NULL);
 	glShaderSource(fShader, 1, &fShaderSource, NULL);
-
 
 	glCompileShader(vShader);
 
@@ -128,7 +126,7 @@ void display(GLFWwindow* window) {
 	if (x < -0.75f) inc = 0.01f;
 	GLuint offsetLoc = glGetUniformLocation(renderingProgram, "offset");
 	glProgramUniform1f(renderingProgram, offsetLoc, x);
-	glDrawArrays(GL_TRIANGLES, 0, 4);
+	glDrawArrays(GL_TRIANGLES, 0, 3);
 }
 
 int main()
