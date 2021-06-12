@@ -15,6 +15,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "5 Drawing a Traingle", "5 D
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "6 Animating The Triangle", "6 Animating The Triangle\6 Animating The Triangle.vcxproj", "{798347D3-972D-4A40-B654-8006C820E855}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "7 Static Transformation", "7 Static Transformation\7 Static Transformation.vcxproj", "{D5AAD040-DF8C-4FFB-9E26-807DD0A9AF35}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -71,6 +73,14 @@ Global
 		{798347D3-972D-4A40-B654-8006C820E855}.Release|x64.Build.0 = Release|x64
 		{798347D3-972D-4A40-B654-8006C820E855}.Release|x86.ActiveCfg = Release|Win32
 		{798347D3-972D-4A40-B654-8006C820E855}.Release|x86.Build.0 = Release|Win32
+		{D5AAD040-DF8C-4FFB-9E26-807DD0A9AF35}.Debug|x64.ActiveCfg = Debug|x64
+		{D5AAD040-DF8C-4FFB-9E26-807DD0A9AF35}.Debug|x64.Build.0 = Debug|x64
+		{D5AAD040-DF8C-4FFB-9E26-807DD0A9AF35}.Debug|x86.ActiveCfg = Debug|Win32
+		{D5AAD040-DF8C-4FFB-9E26-807DD0A9AF35}.Debug|x86.Build.0 = Debug|Win32
+		{D5AAD040-DF8C-4FFB-9E26-807DD0A9AF35}.Release|x64.ActiveCfg = Release|x64
+		{D5AAD040-DF8C-4FFB-9E26-807DD0A9AF35}.Release|x64.Build.0 = Release|x64
+		{D5AAD040-DF8C-4FFB-9E26-807DD0A9AF35}.Release|x86.ActiveCfg = Release|Win32
+		{D5AAD040-DF8C-4FFB-9E26-807DD0A9AF35}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
